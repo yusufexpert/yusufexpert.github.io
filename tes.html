@@ -9,6 +9,7 @@
 <style>
 body {
   font-family: Arial;
+  background-color: #204060;
 }
 header {
   color: white;
@@ -19,47 +20,77 @@ header {
   line-height: 15px;
   text-shadow: 2px 5px 10px grey;
 }
-header h2 {
-}
 nav {
-  background-color: #555;
+  background-color: #336699;
   overflow: hidden;
-  margin: 10px 0px;
+  margin-top: 10px;
   border-radius: 15px;
-  padding-left: 10px;
+  padding: 0px 10px;
+  position: sticky;
+  top: 5px;
+  box-shadow: 0px 10px 25px #204060;
 }
-nav a {
+nav button {
+  background-color: #336699;
   float: left;
-  display: block;
-  padding: 15px;
+  border-style: none;
+  padding: 10px;
   color: white;
-  text-align: center;
-  text-decoration: none;
+  border-radius: 15px;
 }
-nav a:hover {
+nav button:hover {
   background-color: #101010;
-  border-radius: 10px;
 }
 article {
-  background-color: white;
-  box-shadow: 2px 5px 15px gray;
+  background-color: #336699;
+  box-shadow: 2px 5px 15px #204060;
   border-radius: 15px;
-  margin: 10px 0px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+  color: white;
 }
 article, h1 p {
   padding: 10px 30px;
-  line-height: 15px;
 }
+
+.server {
+  background-color: #204060;
+  padding: 2px 10px;
+  margin: 10px -12px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.server, a {
+  color: white;
+  font-size: 90%;
+  text-decoration: none;
+}
+
+.server > h2, p {
+  margin: 10px 0px;
+}
+
 footer {
   color: white;
-  background-color: #555;
+  background-color: #336699;
   text-align: center;
   border-radius: 15px;
   bottom: 10px;
-  left: 5px;
-  right: 5px;
+  left: 8px;
+  right: 8px;
   position: fixed;
+  box-shadow: 0px -5px 50px #204060;
 }
+.tab-content .content {
+  display: none;
+}
+
+.tab-content .content.active {
+  display: block;
+}
+
+
 </style>
 <body>
   <header>
@@ -67,14 +98,87 @@ footer {
     <p>Yusuf Official Website</p>
   </header>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">News</a>
-    <a href="#">Contact</a>
+    <button class="tab" onclick="changeTab('home')">Home</button>
+    <button class="tab" onclick="changeTab('serv')">Servers</button>
+    <button class="tab" onclick="changeTab('contact')">Contact</button>
+    <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
   </nav>
-  <article>
-    <h2>M. Yusuf A. D.</h2>
-    <p>Programmer pemula</p>
-  </article>
+  <div class="tab-content">
+    <article id="home" class="content active">
+      <h2>Welcome</h2>
+      <p>Selamat datang di Yusuf Official Website</p>
+      <h1>jnuhu<br>bubu<br>joidsisi<br>nju<br>jjjsjs<br>
+        kdkdkkdk<br>jsjsjjsj<br>ksksjsjsj<br>kkdkdkdkdd<br>
+        ikskskjs<br>jsjsjsjs<br>ksksksk<br>kkskks<br>klksksks</h1>
+    </article>
+    <article id="serv" class="content">
+      <h2>Servers</h2>
+      <div id="servers"></div>
+    </article>
+    <article id="contact" class="content">
+      <h2>Contact</h2>
+    </article>
+    <article id="about" class="content">
+      <h2>About</h2>
+      <p>Created by Yusuf</p>
+    </article>
+  </div>  
   <footer><p>2023 © Yusuf</p></footer>
 </body>
+<script>
+function changeTab(tabId) {
+  // Mendapatkan semua elemen tab
+  let tabs = document.getElementsByClassName('tab');
+  
+  // Menghapus kelas 'active' dari semua elemen tab
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+  }
+  
+  // Menambahkan kelas 'active' ke tab yang dipilih
+  event.target.classList.add('active');
+  
+  // Mendapatkan semua elemen konten
+  let contents = document.getElementsByClassName('content');
+  
+  // Menyembunyikan semua konten
+  for (let i = 0; i < contents.length; i++) {
+    contents[i].style.display = 'none';
+  }
+  
+  // Menampilkan konten yang sesuai dengan tab yang dipilih
+  document.getElementById(tabId).style.display = 'block';
+}
+
+let servers = document.getElementById('servers');
+
+fetch('https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/master/servers.json')
+  .then(res => res.json())
+  .then(data => {
+
+    data.forEach(i => {
+
+      let a = document.createElement('a')
+      a.href = i.url
+
+      let div = document.createElement('div')
+      div.className = 'server'
+      
+      let h2 = document.createElement('h2')
+      h2.textContent = i.name
+      div.appendChild(h2)
+
+      let p = document.createElement('p')
+      p.textContent = i.desc
+      div.appendChild(p)
+
+      a.appendChild(div)
+      servers.appendChild(a)
+    })
+  })
+  .catch(error => {
+    console.log('Terjadi kesalahan:', error)
+  })
+
+</script>
 </html>
