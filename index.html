@@ -17,14 +17,9 @@ body {
   background-image: url("https://open.minecraft.net/images/img/open-realm-bg-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #000d1a;
+  background-color: black;
   color: white;
   font-family:'Verdana';
-}
-
-footer a {
-    color: #00cc66;
-    text-decoration: none;
 }
 
 .nav {
@@ -62,6 +57,11 @@ footer a {
     text-decoration: none;
 }
 
+a {
+    color: #00cc66;
+    text-decoration: none;
+}
+
 footer {
   text-align: center;
   background-color: #333;
@@ -86,8 +86,7 @@ footer {
         <h2>Server</h2>
         <a id="servers"></a>
     </article>
-    <div id="servers">
-    </div>
+    <div id="tes"></div>
     <footer><p>Created by <a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a></p></footer>
 </body>
 <script>
@@ -121,6 +120,20 @@ fetch('https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/maste
   .catch(error => {
     console.log('Terjadi kesalahan:', error)
   })
+
+  fetch('https://mcpedl.org/downloading')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const htmlDoc = parser.parseFromString(data, 'text/html');
+    const sectionElement = htmlDoc.querySelector('section');
+    let tes = document.getElementById('tes')
+    tes.appendChild(sectionElement)
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
 
 </script>
 </html>
