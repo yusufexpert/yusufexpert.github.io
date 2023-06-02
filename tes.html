@@ -46,15 +46,15 @@ nav .tab:hover {
   color: #336699;
   background-color: white;
 }
-article {
+.content {
   background-color: #336699;
   box-shadow: 2px 5px 15px #204060;
   border-radius: 15px;
   margin-top: 10px;
-  margin-bottom: 75px;
+  margin-bottom: 0px;
   color: white;
 }
-article, h1 p button {
+.content, h1 p button {
   padding: 10px 30px;
 }
 
@@ -111,6 +111,10 @@ button {
 a {
   color: #00cc66;
 }
+.batas {
+  display: block;
+  margin: 75px;
+}
 </style>
 <body>
   <header>
@@ -156,6 +160,7 @@ a {
       <h2>About</h2>
       <p>Created by Yusuf</p>
     </article>
+    <div class="batas"></div>
   </div>  
   <footer>
     <p>2023 © Yusuf<br><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a></p>
@@ -182,8 +187,12 @@ function changeTab(tabId) {
     contents[i].style.display = 'none';
   }
   
+  //let batas = document.getElementsByClassName('batas')
+  //batas[0].style.display = 'none'
+
   // Menampilkan konten yang sesuai dengan tab yang dipilih
   document.getElementById(tabId).style.display = 'block';
+  //batas[0].style.display = 'block'
 }
 
 let servers = document.getElementById('servers');
