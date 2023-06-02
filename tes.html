@@ -7,6 +7,15 @@
   <title>Yusuf</title>
 </head>
 <style>
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #336699;
+}
+::-webkit-scrollbar-thumb {
+  background: #00cc66;
+}
 body {
   font-family: Arial;
   background-color: #204060;
@@ -17,8 +26,11 @@ header {
   background-color: #00cc66;
   padding: 15px;
   border-radius: 15px;
-  line-height: 15px;
   text-shadow: 2px 5px 10px grey;
+}
+header h2 {
+  text-decoration: underline solid 4px;
+  text-underline-offset: 7px;
 }
 nav {
   background-color: #336699;
@@ -42,10 +54,6 @@ nav .tab {
   background-color: #00cc66;
   color: white;
 }
-nav .tab:hover {
-  color: #336699;
-  background-color: white;
-}
 .content {
   background-color: #336699;
   box-shadow: 2px 5px 15px #204060;
@@ -56,6 +64,10 @@ nav .tab:hover {
 }
 .content, h1 p button {
   padding: 10px 30px;
+}
+.content > h2 {
+  text-decoration: underline solid 5px #00cc66;
+  text-underline-offset: 7px;
 }
 
 .server {
@@ -101,12 +113,18 @@ footer {
   border-radius: 15px;
   color: white;
 }
+#menu a {
+  display: block;
+  color: white;
+}
 
 button {
   background-color: #00cc66;
   border-style: none;
   padding: 10px 15px;
   border-radius: 15px;
+  color: black;
+  font-size: small;
 }
 a {
   color: #00cc66;
@@ -114,6 +132,20 @@ a {
 .batas {
   display: block;
   margin: 75px;
+}
+.content .kotak {
+  background-color: #00cc66;
+  padding: 10px 0px;
+  border-radius: 15px;
+}
+.content hr {
+  height: 4px;
+  background: #204060;
+  border-style: none;
+  box-shadow: 2px 2px 10px #204060;
+  margin-top: 20px;
+  opacity: 50%;
+  border-radius: 100px;
 }
 </style>
 <body>
@@ -129,41 +161,47 @@ a {
     <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
   </nav>
   <div id="menu">
-    <p>Selamat datang!</p>
+    <a href="#">Tes</a>
+    <a href="#">Tes2</a>
   </div>
   <div class="tab-content">
     <article id="home" class="content active">
       <h2>Welcome</h2>
       <p>Selamat datang di yusuf.shop.<br>Website resmi Yusuf DKV</p>
-      <br>
+      <hr>
       <h2>Servers</h2>
       <p>Minecraft Bedrock Server</p>
       <button onclick="changeTab('serv')">Servers »</button>
-      <br><br>
+      <hr>
       <h2>Minecraft</h2>
       <p>Beli Minecraft Official</p>
-      <button>Beli »</button>
-      <br><br>
+      <a class="btn" href="https://www.minecraft.net/en-us/get-minecraft"><button>Beli »</button></a>
+      <hr>
       <h2>Contact</h2>
       <p>Hubungi Owner via WhatsApp</p>
       <button onclick="changeTab('contact')">Chat »</button>
-      <br><br>
+      <hr>
     </article>
     <article id="serv" class="content">
       <h2>Servers</h2>
       <div id="servers"></div>
+      <hr>
     </article>
     <article id="contact" class="content">
       <h2>Contact</h2>
+      <p>Hubungi Owner</p>
+      <a href="https://wa.me/6283873115706"><button>WhatsApp »</button></a>
+      <hr>
     </article>
     <article id="about" class="content">
       <h2>About</h2>
       <p>Created by Yusuf</p>
+      <hr>
     </article>
     <div class="batas"></div>
   </div>  
   <footer>
-    <p>2023 © Yusuf<br><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a></p>
+    <p><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a><br>2023 © Yusuf</p>
   </footer>
 </body>
 <script>
