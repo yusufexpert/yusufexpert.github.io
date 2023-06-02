@@ -27,10 +27,10 @@ header {
   padding: 15px;
   border-radius: 15px;
   text-shadow: 2px 5px 10px grey;
+  position: sticky;
 }
 header h2 {
-  text-decoration: underline solid 4px;
-  text-underline-offset: 7px;
+  line-height: 10px;
 }
 nav {
   background-color: #336699;
@@ -39,7 +39,7 @@ nav {
   border-radius: 15px;
   padding: 0px 10px;
   position: sticky;
-  top: 5px;
+  top: 10px;
   box-shadow: 0px 10px 25px #204060;
 }
 nav .tab {
@@ -54,6 +54,27 @@ nav .tab {
   background-color: #00cc66;
   color: white;
 }
+#menu {
+  display: none;
+  background-color: #00cc66;
+  margin-top: 10px;
+  color: white;
+  position: sticky;
+  top: 55px;
+  float: right;
+  border-radius: 10px;
+}
+#menu a {
+  display: block;
+  color: white;
+  padding: 10px 15px;
+}
+#menu a:hover {
+  background-color: white;
+  color: #336699;
+  border-radius: 10px;
+}
+
 .content {
   background-color: #336699;
   box-shadow: 2px 5px 15px #204060;
@@ -68,6 +89,10 @@ nav .tab {
 .content > h2 {
   text-decoration: underline solid 5px #00cc66;
   text-underline-offset: 7px;
+}
+.content > p {
+  margin-left: 10px;
+  line-height: 1.5;
 }
 
 .server {
@@ -86,36 +111,12 @@ nav .tab {
   font-size: 90%;
 }
 
-footer {
-  color: white;
-  background-color: #336699;
-  text-align: center;
-  border-radius: 15px;
-  bottom: 10px;
-  left: 8px;
-  right: 8px;
-  position: fixed;
-  box-shadow: 0px -5px 50px #204060;
-}
 .tab-content .content {
   display: none;
 }
 
 .tab-content .content.active {
   display: block;
-}
-
-#menu {
-  display: none;
-  background-color: #00cc66;
-  margin-top: 10px;
-  padding: 1px 15px;
-  border-radius: 15px;
-  color: white;
-}
-#menu a {
-  display: block;
-  color: white;
 }
 
 button {
@@ -131,7 +132,7 @@ a {
 }
 .batas {
   display: block;
-  margin: 75px;
+  margin: 80px;
 }
 .content .kotak {
   background-color: #00cc66;
@@ -140,15 +141,42 @@ a {
 }
 .content hr {
   height: 4px;
-  background: #204060;
+  background: #2d5986;
   border-style: none;
-  box-shadow: 2px 2px 10px #204060;
+  box-shadow: 2px 2px 10px #2d5986;
   margin-top: 20px;
-  opacity: 50%;
   border-radius: 100px;
+}
+footer {
+  color: white;
+  background-color: #336699;
+  text-align: center;
+  border-radius: 15px;
+  bottom: 10px;
+  left: 8px;
+  right: 8px;
+  position: fixed;
+  box-shadow: 0px 0px 50px #204060;
+}
+.header {
+  background-image: linear-gradient(to bottom, #204060, rgba(0,0,0,0));
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.footer {
+  background-image: linear-gradient(to top, #204060, rgba(0,0,0,0));
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 13%;
 }
 </style>
 <body>
+  <div class="header"></div>
   <header>
     <h2>Yusuf DKV</h2>
     <p>Yusuf Official Website</p>
@@ -161,13 +189,16 @@ a {
     <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
   </nav>
   <div id="menu">
-    <a href="#">Tes</a>
-    <a href="#">Tes2</a>
+    <a href="#">Contact</a>
+    <a href="#">Request</a>
+    <a href="#">Report</a>
   </div>
   <div class="tab-content">
     <article id="home" class="content active">
       <h2>Welcome</h2>
-      <p>Selamat datang di yusuf.shop.<br>Website resmi Yusuf DKV</p>
+      <p>Selamat datang di yusuf.shop.<br>Website resmi Yusuf DKV.<br>
+      <br>Website masih dalam tahap pengembangan,<br>harap maklumi jika menemukan Bug.</p>
+      <a href="https://wa.me/6283873115706"><button>Report Bug »</button></a>
       <hr>
       <h2>Servers</h2>
       <p>Minecraft Bedrock Server</p>
@@ -180,6 +211,9 @@ a {
       <h2>Contact</h2>
       <p>Hubungi Owner via WhatsApp</p>
       <button onclick="changeTab('contact')">Chat »</button>
+      <hr>
+      <h2>About</h2>
+      <p>Created by Yusuf<br><a href="#">@yusuf.dkv</a></p>
       <hr>
     </article>
     <article id="serv" class="content">
@@ -199,9 +233,10 @@ a {
       <hr>
     </article>
     <div class="batas"></div>
-  </div>  
+  </div>
+  <div class="footer"></div>
   <footer>
-    <p><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a><br>2023 © Yusuf</p>
+    <p></p><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a><br>2023 © Yusuf</p>
   </footer>
 </body>
 <script>
