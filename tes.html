@@ -30,7 +30,7 @@ nav {
   top: 5px;
   box-shadow: 0px 10px 25px #204060;
 }
-nav button {
+nav .tab {
   background-color: #336699;
   float: left;
   border-style: none;
@@ -38,18 +38,23 @@ nav button {
   color: white;
   border-radius: 15px;
 }
-nav button:hover {
-  background-color: #101010;
+.tab.active {
+  background-color: #00cc66;
+  color: white;
+}
+nav .tab:hover {
+  color: #336699;
+  background-color: white;
 }
 article {
   background-color: #336699;
   box-shadow: 2px 5px 15px #204060;
   border-radius: 15px;
   margin-top: 10px;
-  margin-bottom: 70px;
+  margin-bottom: 75px;
   color: white;
 }
-article, h1 p {
+article, h1 p button {
   padding: 10px 30px;
 }
 
@@ -60,15 +65,13 @@ article, h1 p {
   text-decoration: none;
   border-radius: 15px;
 }
-
 .server, a {
   color: white;
-  font-size: 90%;
   text-decoration: none;
 }
-
-.server > h2, p {
+.server h2, p {
   margin: 10px 0px;
+  font-size: 90%;
 }
 
 footer {
@@ -90,7 +93,24 @@ footer {
   display: block;
 }
 
+#menu {
+  display: none;
+  background-color: #00cc66;
+  margin-top: 10px;
+  padding: 1px 15px;
+  border-radius: 15px;
+  color: white;
+}
 
+button {
+  background-color: #00cc66;
+  border-style: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+a {
+  color: #00cc66;
+}
 </style>
 <body>
   <header>
@@ -98,18 +118,32 @@ footer {
     <p>Yusuf Official Website</p>
   </header>
   <nav>
-    <button class="tab" onclick="changeTab('home')">Home</button>
+    <button class="tab active" onclick="changeTab('home')">Home</button>
     <button class="tab" onclick="changeTab('serv')">Servers</button>
     <button class="tab" onclick="changeTab('contact')">Contact</button>
+    <button class="tab" onclick="menu()" style="float: right;">Menu</button>
     <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
   </nav>
+  <div id="menu">
+    <p>Selamat datang!</p>
+  </div>
   <div class="tab-content">
     <article id="home" class="content active">
       <h2>Welcome</h2>
-      <p>Selamat datang di Yusuf Official Website</p>
-      <h1>jnuhu<br>bubu<br>joidsisi<br>nju<br>jjjsjs<br>
-        kdkdkkdk<br>jsjsjjsj<br>ksksjsjsj<br>kkdkdkdkdd<br>
-        ikskskjs<br>jsjsjsjs<br>ksksksk<br>kkskks<br>klksksks</h1>
+      <p>Selamat datang di yusuf.shop.<br>Website resmi Yusuf DKV</p>
+      <br>
+      <h2>Servers</h2>
+      <p>Minecraft Bedrock Server</p>
+      <button onclick="changeTab('serv')">Servers »</button>
+      <br><br>
+      <h2>Minecraft</h2>
+      <p>Beli Minecraft Official</p>
+      <button>Beli »</button>
+      <br><br>
+      <h2>Contact</h2>
+      <p>Hubungi Owner via WhatsApp</p>
+      <button onclick="changeTab('contact')">Chat »</button>
+      <br><br>
     </article>
     <article id="serv" class="content">
       <h2>Servers</h2>
@@ -123,7 +157,9 @@ footer {
       <p>Created by Yusuf</p>
     </article>
   </div>  
-  <footer><p>2023 © Yusuf</p></footer>
+  <footer>
+    <p>2023 © Yusuf<br><a href="mailto:01milikbersama@gmail.com">01milikbersama@gmail.com</a></p>
+  </footer>
 </body>
 <script>
 function changeTab(tabId) {
@@ -179,6 +215,15 @@ fetch('https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/maste
   .catch(error => {
     console.log('Terjadi kesalahan:', error)
   })
+
+  function menu() {
+  let x = document.getElementById("menu");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 
 </script>
 </html>
