@@ -69,7 +69,7 @@ nav .tab {
   margin-top: 10px;
   color: white;
   position: sticky;
-  top: 55px;
+  top: 60px;
   float: right;
   border-radius: 10px;
   box-shadow: 5px 5px 25px #006633;
@@ -107,10 +107,10 @@ nav .tab {
   margin-bottom: 0px;
   color: white;
 }
-.content, h1 p button {
+.content, h3 p button {
   padding: 10px 30px;
 }
-.content > h2 {
+.content > h3 {
   text-decoration: underline solid 5px #00cc66;
   text-underline-offset: 7px;
   text-shadow: 10px 10px 20px #204060;
@@ -134,7 +134,7 @@ nav .tab {
   color: white;
   text-decoration: none;
 }
-.server h2, p {
+.server h3, p {
   margin: 10px 0px;
   font-size: 90%;
 }
@@ -168,7 +168,7 @@ a {
   padding: 10px 0px;
   border-radius: 15px;
 }
-.content hr {
+hr {
   height: 4px;
   background: #2d5986;
   border-style: none;
@@ -216,6 +216,34 @@ footer {
   transform: translate(-50%, -50%);
   box-shadow: 0px 0px 75px #00cc66;
 }
+.prof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+}
+.prof .banner {
+  border-radius: 25px; /* Sesuaikan dengan border radius yang diinginkan */
+  width: 450px;
+  margin-top: 10px;
+}
+.prof .pp {
+  border-radius: 100%;
+  clear: both;
+  display: flex;
+  margin-top: -75px; /* Sesuaikan dengan jarak vertikal yang diinginkan */
+  width: 150px;
+  border: solid 5px #336699;
+}
+.prof h3 {
+  margin-bottom: 0px;
+}
+.prof .tag {
+  padding: 10px 20px;
+  background-color: #2d5986;
+  border-radius: 15px;
+}
 </style>
 <body>
   <p class="load">Loading...</p>
@@ -230,6 +258,7 @@ footer {
       <button class="tab active" onclick="changeTab('home')">Home</button>
       <button class="tab" onclick="changeTab('serv')">Servers</button>
       <button class="tab" onclick="changeTab('contact')">Contact</button>
+      <button class="tab" onclick="changeTab('profile')">Profile</button>
       <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
     </nav>
     <div id="menu">
@@ -239,40 +268,49 @@ footer {
     </div>
     <div class="tab-content">
       <article id="home" class="content active">
-        <h2>Welcome</h2>
+        <h3>Welcome</h3>
         <p>Selamat datang di yusuf.shop.<br>Website resmi Yusuf DKV.<br>
         <br>Website masih dalam tahap pengembangan,<br>harap maklumi jika menemukan Bug.</p>
         <a href="https://wa.me/6283873115706"><button>Report Bug »</button></a>
         <hr>
-        <h2>Servers</h2>
+        <h3>Servers</h3>
         <p>Minecraft Bedrock Server</p>
         <button onclick="changeTab('serv')">Servers »</button>
         <hr>
-        <h2>Minecraft</h2>
+        <h3>Minecraft</h3>
         <p>Beli Minecraft Official</p>
         <a class="btn" href="https://www.minecraft.net/en-us/get-minecraft"><button>Beli »</button></a>
         <hr>
-        <h2>Contact</h2>
+        <h3>Contact</h3>
         <p>Hubungi Owner via WhatsApp</p>
         <button onclick="changeTab('contact')">Chat »</button>
         <hr>
-        <h2>About</h2>
+        <h3>About</h3>
         <p>Created by Yusuf<br><a href="#">@yusuf.dkv</a></p>
         <hr>
       </article>
       <article id="serv" class="content">
-        <h2>Servers</h2>
+        <h3>Servers</h3>
         <div id="servers"></div>
         <hr>
       </article>
       <article id="contact" class="content">
-        <h2>Contact</h2>
+        <h3>Contact</h3>
         <p>Hubungi Owner</p>
         <a href="https://wa.me/6283873115706"><button>WhatsApp »</button></a>
         <hr>
       </article>
+      <article id="profile" class="content">
+        <div class="prof">
+          <img class="banner" src="https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/master/Mangrove_House.jpg" alt="#">
+          <img class="pp" src="https://avatars.githubusercontent.com/u/111687234?s=400&u=54d377c2caf81c0ff441aecb0c876c4fc81aceec&v=4" alt="#">
+          <h3>Yusuf DKV</h3>
+          <p class="tag">Programmer</p>
+        </div>
+        <hr>
+      </article>
       <article id="about" class="content">
-        <h2>About</h2>
+        <h3>About</h3>
         <p>Created by Yusuf</p>
         <hr>
       </article>
@@ -327,9 +365,9 @@ fetch('https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/maste
       let div = document.createElement('div')
       div.className = 'server'
       
-      let h2 = document.createElement('h2')
-      h2.textContent = i.name
-      div.appendChild(h2)
+      let h3 = document.createElement('h3')
+      h3.textContent = i.name
+      div.appendChild(h3)
 
       let p = document.createElement('p')
       p.textContent = i.desc
@@ -358,7 +396,7 @@ window.addEventListener('load', function() {
     let bd = document.getElementById('body')
     bd.style.display = 'block'; // Munculkan konten utama
     load[0].style.display = 'none'; // Sembunyikan splash screen
-  }, 2000); // Ubah angka 3000 ke waktu (dalam milidetik) yang Anda inginkan
+  }, 0000); // Ubah angka 3000 ke waktu (dalam milidetik) yang Anda inginkan
 });
 
 </script>
