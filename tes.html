@@ -12,9 +12,12 @@
 }
 ::-webkit-scrollbar-track {
   background: #336699;
+  border-radius: 100px;
+  margin: 10px;
 }
 ::-webkit-scrollbar-thumb {
   background: #00cc66;
+  border-radius: 100px;
 }
 #body {
   display: none;
@@ -28,9 +31,10 @@ header {
   text-align: center;
   background-color: #00cc66;
   padding: 15px;
-  border-radius: 15px;
-  text-shadow: 2px 5px 10px grey;
+  border-radius: 30px 15px 30px 15px;
+  text-shadow: 5px 5px 10px #006633;
   position: sticky;
+  box-shadow: 5px 5px 50px #006633;
 }
 header h2 {
   line-height: 10px;
@@ -52,6 +56,8 @@ nav .tab {
   padding: 10px;
   color: white;
   border-radius: 15px;
+  text-shadow: 5px 5px 10px #204060;
+  font-size: medium;
 }
 .tab.active {
   background-color: #00cc66;
@@ -66,16 +72,31 @@ nav .tab {
   top: 55px;
   float: right;
   border-radius: 10px;
+  box-shadow: 5px 5px 25px #006633;
 }
 #menu a {
   display: block;
   color: white;
   padding: 10px 15px;
+  text-shadow: 5px 5px 10px #006633;
 }
 #menu a:hover {
   background-color: white;
   color: #336699;
   border-radius: 10px;
+  text-shadow: 5px 5px 10px #204060;
+}
+.tiga {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border-style: none;
+  background: transparent;
+  margin: 10px;
+  text-shadow: 4px 4px 8px #006633;
 }
 
 .content {
@@ -92,10 +113,14 @@ nav .tab {
 .content > h2 {
   text-decoration: underline solid 5px #00cc66;
   text-underline-offset: 7px;
+  text-shadow: 10px 10px 20px #204060;
 }
 .content > p {
-  margin-left: 10px;
   line-height: 1.5;
+  border-left: 4px solid #2d5986;
+  padding-left: 10px;
+  text-shadow: 10px 10px 20px #204060;
+  
 }
 
 .server {
@@ -122,13 +147,14 @@ nav .tab {
   display: block;
 }
 
-button {
+article button {
   background-color: #00cc66;
   border-style: none;
   padding: 10px 15px;
   border-radius: 15px;
   color: black;
   font-size: small;
+  box-shadow: 10px 10px 20px #2d5986;
 }
 a {
   color: #00cc66;
@@ -159,7 +185,8 @@ footer {
   left: 8px;
   right: 8px;
   position: fixed;
-  box-shadow: 0px 0px 50px #204060;
+  box-shadow: 0px -10px 25px #204060;
+  text-shadow: 5px 5px 10px #204060;
 }
 .header {
   background-image: linear-gradient(to bottom, #204060, rgba(0,0,0,0));
@@ -187,6 +214,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 75px #00cc66;
 }
 </style>
 <body>
@@ -196,12 +224,12 @@ footer {
     <header>
       <h2>Yusuf DKV</h2>
       <p>Yusuf Official Website</p>
+      <button class="tiga" onclick="menu()">⁝</button>
     </header>
     <nav>
       <button class="tab active" onclick="changeTab('home')">Home</button>
       <button class="tab" onclick="changeTab('serv')">Servers</button>
       <button class="tab" onclick="changeTab('contact')">Contact</button>
-      <button class="tab" onclick="menu()" style="float: right;">Menu</button>
       <button class="tab" onclick="changeTab('about')" style="float: right;">About</button>
     </nav>
     <div id="menu">
@@ -330,7 +358,7 @@ window.addEventListener('load', function() {
     let bd = document.getElementById('body')
     bd.style.display = 'block'; // Munculkan konten utama
     load[0].style.display = 'none'; // Sembunyikan splash screen
-  }, 3000); // Ubah angka 3000 ke waktu (dalam milidetik) yang Anda inginkan
+  }, 2000); // Ubah angka 3000 ke waktu (dalam milidetik) yang Anda inginkan
 });
 
 </script>
