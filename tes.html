@@ -57,7 +57,7 @@ nav .tab {
   color: white;
   border-radius: 15px;
   text-shadow: 5px 5px 10px #204060;
-  font-size: medium;
+  font-size: small;
 }
 .tab.active {
   background-color: #00cc66;
@@ -69,7 +69,7 @@ nav .tab {
   margin-top: 10px;
   color: white;
   position: sticky;
-  top: 60px;
+  top: 55px;
   float: right;
   border-radius: 10px;
   box-shadow: 5px 5px 25px #006633;
@@ -161,7 +161,7 @@ a {
 }
 .batas {
   display: block;
-  margin: 80px;
+  margin: 75px;
 }
 .content .kotak {
   background-color: #00cc66;
@@ -187,6 +187,7 @@ footer {
   position: fixed;
   box-shadow: 0px -10px 25px #204060;
   text-shadow: 5px 5px 10px #204060;
+  font-size: small;
 }
 .header {
   background-image: linear-gradient(to bottom, #204060, rgba(0,0,0,0));
@@ -220,12 +221,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   border-radius: 25px;
+  flex-direction: column;
 }
 .prof .banner {
   border-radius: 25px; /* Sesuaikan dengan border radius yang diinginkan */
-  width: 450px;
+  width: 550px;
   margin-top: 10px;
 }
 .prof .pp {
@@ -235,6 +236,21 @@ footer {
   margin-top: -75px; /* Sesuaikan dengan jarak vertikal yang diinginkan */
   width: 150px;
   border: solid 5px #336699;
+}
+@media screen and (max-width: 600px) {
+  .prof .banner {
+    border-radius: 25px; /* Sesuaikan dengan border radius yang diinginkan */
+    width: 90vw;
+    margin-top: 10px;
+  }
+  .prof .pp {
+    border-radius: 100%;
+    clear: both;
+    display: flex;
+    margin-top: -75px; /* Sesuaikan dengan jarak vertikal yang diinginkan */
+    width: 25vw;
+    border: solid 5px #336699;
+  }
 }
 .prof h3 {
   margin-bottom: 0px;
@@ -301,12 +317,12 @@ footer {
         <hr>
       </article>
       <article id="profile" class="content">
-        <div class="prof">
+        <article class="prof">
           <img class="banner" src="https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/master/Mangrove_House.jpg" alt="#">
           <img class="pp" src="https://avatars.githubusercontent.com/u/111687234?s=400&u=54d377c2caf81c0ff441aecb0c876c4fc81aceec&v=4" alt="#">
           <h3>Yusuf DKV</h3>
           <p class="tag">Programmer</p>
-        </div>
+        </article>
         <hr>
       </article>
       <article id="about" class="content">
