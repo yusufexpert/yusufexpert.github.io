@@ -1,12 +1,12 @@
 [
     {
-        "name": "Milik Bersama",
-        "desc": "Minecraft Bedrock Server - v1.19.81",
-        "url": "https://yusuf.shop/25647"
+        "name": "AyamTerbang",
+        "desc": "Minecraft Bedrock Server - v1.20.0",
+        "url": "minecraft://?addExternalServer=AyamTerbang|mc.yusufdkv.xyz:10240"
     },
     {
-        "name": "Last of Craft S2",
-        "desc":"Minecraft Bedrock Server - v1.19.83",
-        "url": "https://yusuf.shop/25603"
+        "name": "Last of Craft S3",
+        "desc":"Minecraft Bedrock Server - v1.20.0",
+        "url": "minecraft://?addExternalServer=Last%20of%20Craft|mc.yusufdkv.xyz:20480"
     }
 ]
