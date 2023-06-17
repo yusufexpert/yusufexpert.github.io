@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yusuf DKV</title>
+  <link rel="icon" href="./image.jpg">
+    <meta property="og:title" content="Yusuf DKV" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://yusufdkv.xyz" />
+    <meta property="og:image" content="https://yusufdkv.xyz/banner.png" />
+    <meta property="og:description" content="Yusuf Official Website" />
+</head>
+<style>
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #336699;
+  border-radius: 100px;
+  margin: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00cc66;
+  border-radius: 100px;
+}
+#body {
+  display: none;
+}
+body {
+  font-family: Arial;
+  background-color: #204060;
+}
+header {
+  color: white;
+  text-align: center;
+  background-color: #00cc66;
+  padding: 1px;
+  border-radius: 30px 15px 30px 15px;
+  text-shadow: 5px 5px 10px #006633;
+  position: sticky;
+  box-shadow: 5px 5px 50px #006633;
+  margin-top: 10px;
+}
+header > h2 {
+  margin-bottom: -10px;
+}
+.alltabs {
+  background-color: #2d5986;
+  position: sticky;
+  top: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px #204060;
+  margin-top: 10px;
+}
+.tabs {
+  background-color: #336699;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 0px 10px;
+  position: sticky;
+  top: 10px;
+}
+.tabs > .tab {
+  background-color: #336699;
+  float: left;
+  border-style: none;
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+  text-shadow: 5px 5px 10px #204060;
+  font-size: small;
+}
+.tab.active {
+  background-color: #00cc66;
+  color: white;
+  font-weight: bold;
+}
+#tabs1 {
+  display: none;
+  top: 55px;
+  background-color: #2d5986;
+}
+#tabs1 > .tab {
+  background-color: #2d5986;
+}
+#tabs1 > .tab.active {
+  background-color: white;
+  color: #336699;
+}
+.tab.more {
+  background-color: white;
+  font-weight: bold;
+  color: #336699;
+  text-shadow: 0px 0px 25px #00cc66;
+}
+
+#menu {
+  display: none;
+  background-color: #00cc66;
+  margin-top: 10px;
+  color: white;
+  position: sticky;
+  top: 10px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 5px 5px 25px #006633;
+}
+#menu > a {
+  display: block;
+  color: white;
+  padding: 10px 15px;
+  text-shadow: 5px 5px 10px #006633;
+}
+#menu > a:hover {
+  background-color: white;
+  color: #336699;
+  border-radius: 10px;
+  text-shadow: 5px 5px 10px #204060;
+}
+.tiga {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border-style: none;
+  background: transparent;
+  margin: 10px;
+  text-shadow: 4px 4px 8px #006633;
+}
+
+.content {
+  background-color: #336699;
+  box-shadow: 2px 5px 15px #204060;
+  border-radius: 15px;
+  color: white;
+  margin: 10px 0px;
+  padding: 10px 20px;
+}
+.content > * {
+  padding: 0px 20px;
+}
+.content > h3 {
+  text-decoration: underline solid 5px #00cc66;
+  text-underline-offset: 7px;
+}
+.content > p {
+  line-height: 1.5;
+  border-left: 4px solid #2d5986;
+  margin: auto 20px;
+  padding-left: 15px;
+}
+.content > ul {
+  margin-left: 35px;
+}
+.content > a > button {
+  background-color: #00cc66;
+  border-style: none;
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: black;
+  font-size: small;
+  box-shadow: 10px 10px 20px #2d5986;
+  margin: 10px auto;
+}
+/*.content > .kotak {
+  background-color: #00cc66;
+  border-radius: 15px;
+  margin: 10px 200px;
+}*/
+.warn > p {
+  color: white;
+  font-size: small;
+  font-weight: bold;
+  margin: 5px 0px;
+  margin-left: -10px;
+}
+.warn {
+  background-color: #ff3300;
+  display: inline-flex;
+  border-radius: 100px;
+  margin-left: 20px;
+}
+.content > hr {
+  height: 4px;
+  background: #2d5986;
+  border-style: none;
+  box-shadow: 2px 2px 10px #2d5986;
+  border-radius: 100px;
+  margin: auto 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.links {
+  background-color: #00cc66;
+  padding: 2px 10px;
+  margin: 10px auto;
+  border-radius: 15px;
+  color: #204060;
+  text-shadow: 3px 3px 10px #006633;
+}
+.links:hover {
+  background-color: white;
+  text-shadow: 3px 3px 10px grey;
+}
+.urlserver > .urlapp {
+  text-decoration: none;
+}
+.links > h3 {
+  margin-top: 8px;
+  margin-bottom: -10px;
+  font-size: medium;
+  margin-left: 5px;
+}
+.links > p {
+  margin-bottom: 8px;
+  font-size: small;
+  margin-left: 5px;
+}
+
+.tab-content .content {
+  display: none;
+}
+
+.tab-content .content.active {
+  display: block;
+}
+
+a {
+  color: #00cc66;
+  text-decoration: none;
+}
+.batas {
+  display: block;
+  margin: 75px;
+}
+footer {
+  color: white;
+  background-color: #336699;
+  text-align: center;
+  border-radius: 15px;
+  bottom: 10px;
+  left: 8px;
+  right: 8px;
+  position: fixed;
+  box-shadow: 0px -10px 25px #204060;
+  text-shadow: 5px 5px 10px #204060;
+  font-size: small;
+}
+footer > p {
+  margin: 10px;
+}
+.header {
+  background-image: linear-gradient(to bottom, #204060, rgba(0,0,0,0));
+  width: 100%;
+  height: 15%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.footer {
+  background-image: linear-gradient(to top, #204060, rgba(0,0,0,0));
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 13%;
+}
+.load {
+  text-align: center;
+  background-color: #00cc66;
+  border-radius: 15px;
+  color: white;
+  padding: 10px 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 75px #00cc66;
+}
+.prof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  flex-direction: column;
+}
+.prof > .banner {
+  border-radius: 25px; /* Sesuaikan dengan border radius yang diinginkan */
+  width: 550px;
+  margin-top: 10px;
+}
+.prof > .pp {
+  border-radius: 100%;
+  clear: both;
+  display: flex;
+  margin-top: -75px; /* Sesuaikan dengan jarak vertikal yang diinginkan */
+  width: 150px;
+  border: solid 5px #336699;
+}
+@media screen and (max-width: 600px) {
+  .prof > .banner {
+    border-radius: 25px; /* Sesuaikan dengan border radius yang diinginkan */
+    width: 90vw;
+    margin-top: 10px;
+  }
+  .prof > .pp {
+    border-radius: 100%;
+    clear: both;
+    display: flex;
+    margin-top: -75px; /* Sesuaikan dengan jarak vertikal yang diinginkan */
+    width: 25vw;
+    border: solid 5px #336699;
+  }
+}
+.prof > h3 {
+  margin-bottom: 0px;
+}
+.prof > .tag {
+  padding: 10px 20px;
+  background-color: #2d5986;
+  border-radius: 15px;
+}
+</style>
+<body>
+  <p class="load">Loading...</p>
+  <div id="body">
+    <div class="header"></div>
+    <header>
+      <h2>Yusuf DKV</h2>
+      <p>Yusuf Official Website</p>
+      <button class="tiga" onclick="menu()">⁝</button>
+    </header>
+    <div class="alltabs">
+      <nav class="tabs">
+        <button class="tab active" onclick="changeTab('home')">Home</button>
+        <button class="tab" onclick="changeTab('contact')">Contact</button>
+        <!-- button class="tab" onclick="changeTab('profile')">Profile</button -->
+        <button class="tab" onclick="changeTab('about')">About</button>
+        <button class="tab moretab" onclick="tabs1()" style="float: right;">▼ Select</button>
+      </nav>
+      <nav class="tabs" id="tabs1">
+        <button class="tab" onclick="changeTab('serv')">Servers</button>
+        <button class="tab" onclick="changeTab('pf')">Presets</button>
+        <button class="tab" onclick="changeTab('apk')">Apps</button>
+      </nav>
+    </div>
+    <div id="menu">
+      <a href="https://wa.me/6283873115706">Contact</a>
+      <a href="https://wa.me/6283873115706">Request</a>
+      <a href="https://wa.me/6283873115706">Report</a>
+    </div>
+    <div class="tab-content">
+      <article id="home" class="content active">
+        <h3>Welcome</h3>
+        <p>Welcome to yusufdkv.xyz.
+          <br>This is Yusuf DKV's official website.
+          <br><br>This website is still under development,
+          <br>please understand if you find a bug!</p>
+        <a href="https://wa.me/6283873115706"><button>Report Bug »</button></a>
+        <hr>
+      </article>
+      <article id="serv" class="content active">
+        <h3>Servers</h3>
+        <p>Click one to add a Server to Minecraft.</p>
+        <div id="servers"></div>
+        <p>Don't have Minecraft yet? <a href="https://www.minecraft.net/en-us/get-minecraft">Download</a>.</p>
+        <hr>
+      </article>
+      <article id="pf" class="content active">
+        <h3>Presets</h3>
+        <p>Coming soon</p>
+        <hr>
+      </article>
+      <article id="apk" class="content active">
+        <h3>Application</h3>
+        <p>Here are some app download links,
+          <br>some are illegal.</p>
+        <div id="apps"></div>
+        <div class="warn"><p>( ! ) Risk beyond our responsibility</p></div>
+        <hr>
+      </article>
+      <article id="contact" class="content active">
+        <h3>Contact</h3>
+        <p>Contact the Website owner via the WhatsApp Application.</p>
+        <a href="https://wa.me/6283873115706"><button>WhatsApp »</button></a>
+        <p>Don't have the WhatsApp application yet? <a href="https://www.whatsapp.com/download">Download</a>.</p>
+        <hr>
+      </article>
+      <!-- article id="profile" class="content">
+        <article class="prof">
+          <img class="banner" src="https://raw.githubusercontent.com/yusufexpert/yusufexpert.github.io/master/Mangrove_House.jpg" alt="#">
+          <img class="pp" src="https://avatars.githubusercontent.com/u/111687234?s=400&u=54d377c2caf81c0ff441aecb0c876c4fc81aceec&v=4" alt="#">
+          <h3>Yusuf DKV</h3>
+          <p class="tag">Programmer</p>
+        </article>
+        <hr>
+      </article -->
+      <article id="about" class="content active">
+        <h3>About</h3>
+        <p>This website was created by someone named Yusuf.
+          <br>This website is running on Ubuntu Server which keeps running non-stop.
+          <ul>
+            <li>CPU: 2 Cores</li>
+            <li>RAM: 4GB</li>
+            <li>Disk: 60GB SSD</li>
+          </ul>
+          <a href="https://www.instagram.com/yusuf.dkv">- @yusuf.dkv</a>
+        </p>
+        <hr>
+      </article>
+      <div class="batas"></div>
+    </div>
+    <div class="footer"></div>
+    <footer>
+      <p><a href="/cdn-cgi/l/email-protection#5262633f3b3e3b3930372021333f3312353f333b3e7c313d3f"><span class="__cf_email__" data-cfemail="38080955515451535a5d4a4b595559785f55595154165b5755">[email&#160;protected]</span></a><br>2023 © Yusuf</p>
+    </footer>
+  </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+function changeTab(tabId) {
+  // Mendapatkan semua elemen tab
+  let tabs = document.getElementsByClassName('tab');
+  
+  // Menghapus kelas 'active' dari semua elemen tab
+  for (let i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+  }
+  
+  // Menambahkan kelas 'active' ke tab yang dipilih
+  event.target.classList.add('active');
+  
+  // Mendapatkan semua elemen konten
+  let contents = document.getElementsByClassName('content');
+  
+  if (tabId=='home') {
+    for (let i = 0; i < contents.length; i++) {
+      contents[i].style.display = 'block';
+    }
+  } else {
+    // Menyembunyikan semua konten
+    for (let i = 0; i < contents.length; i++) {
+      contents[i].style.display = 'none';
+    }
+  }
+  
+  //let batas = document.getElementsByClassName('batas')
+  //batas[0].style.display = 'none'
+
+  // Menampilkan konten yang sesuai dengan tab yang dipilih
+  document.getElementById(tabId).style.display = 'block';
+  //batas[0].style.display = 'block'
+}
+
+let servers = document.getElementById('servers');
+
+fetch('./servers.json')
+  .then(res => res.json())
+  .then(data => {
+
+    data.forEach(i => {
+
+      let a = document.createElement('a')
+      a.href = i.url
+      a.className = 'urlserver'
+
+      let div = document.createElement('div')
+      div.className = 'server links'
+      
+      let h3 = document.createElement('h3')
+      h3.textContent = i.name
+      div.appendChild(h3)
+
+      let p = document.createElement('p')
+      p.textContent = i.desc
+      div.appendChild(p)
+
+      a.appendChild(div)
+      servers.appendChild(a)
+    })
+  })
+  .catch(error => {
+    console.log('Terjadi kesalahan:', error)
+  })
+
+
+
+  let apps = document.getElementById('apps');
+
+fetch('./apps.json')
+  .then(res => res.json())
+  .then(data => {
+
+    data.forEach(i => {
+
+      let a = document.createElement('a')
+      a.href = i.url
+      a.className = 'urlapp'
+
+      let div = document.createElement('div')
+      div.className = 'app links'
+      
+      let h3 = document.createElement('h3')
+      h3.textContent = i.name
+      div.appendChild(h3)
+
+      let p = document.createElement('p')
+      p.textContent = i.desc
+      div.appendChild(p)
+
+      a.appendChild(div)
+      apps.appendChild(a)
+    })
+  })
+  .catch(error => {
+    console.log('Terjadi kesalahan:', error)
+  })
+
+
+
+function menu() {
+  let x = document.getElementById("menu");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+function tabs1() {
+  let x = document.getElementById("tabs1")
+  let y = document.getElementsByClassName("moretab")
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y[0].classList.remove("more")
+  } else {
+    x.style.display = "block";
+    y[0].classList.add("more")
+  }
+}
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    let load = document.getElementsByClassName('load')
+    let bd = document.getElementById('body')
+    bd.style.display = 'block'; // Munculkan konten utama
+    load[0].style.display = 'none'; // Sembunyikan splash screen
+  }, 0000); // Ubah angka 3000 ke waktu (dalam milidetik) yang Anda inginkan
+});
+
+function refreshPage() {
+            location.reload();
+}
+
+</script>
+</html>
